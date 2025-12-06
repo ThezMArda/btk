@@ -31,3 +31,4 @@ def cumle_analizi(file_name):
     en_uzun_alpha =max(alpha_kelimeler,key=lambda:x(x[1],x[0]),default=("yok",0))
     
 cumle_analizi("uygulama1.txt")
+print("selam")

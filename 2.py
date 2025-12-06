@@ -56,3 +56,4 @@ if __name__ =="__main__":
     s2 = Ogrenci("me213","kaawqdas@gmail.cm","200")
     p = Platform()
     btk_python = Ders("btk ileri egiim",t1)
+#şimdi selammmm
