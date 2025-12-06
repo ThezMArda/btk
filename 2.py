@@ -57,3 +57,4 @@ if __name__ =="__main__":
     p = Platform()
     btk_python = Ders("btk ileri egiim",t1)
 #şimdi selammmm
+print("tamamdır")
