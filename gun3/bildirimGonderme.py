@@ -6,7 +6,7 @@ class MesajBilgi:
     kisi: str
 
 class MesajDondurucu:
-    def mesajDondur(self, bilgi: MesajBilgi):
+    def mesajDondur(self, bilgi: MesajBilgi)-> str:
         return f"{bilgi.kisi} kişisinden mesaj: {bilgi.mesaj}"
 
 class Gonderici(Protocol):
