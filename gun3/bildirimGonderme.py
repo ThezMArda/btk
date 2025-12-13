@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-
+from typing import Protocol
 @dataclass
 class MesajBilgi:
     mesaj: str
@@ -9,7 +9,7 @@ class MesajDondurucu:
     def mesajDondur(self, bilgi: MesajBilgi):
         return f"{bilgi.kisi} kişisinden mesaj: {bilgi.mesaj}"
 
-class Gonderici():
+class Gonderici(Protocol):
     def send(self, bilgiNesnesi: MesajBilgi):
         pass
 
