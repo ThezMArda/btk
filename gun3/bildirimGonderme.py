@@ -3,23 +3,33 @@ from dataclasses import dataclass
 @dataclass
 class MesajBilgi:
     mesaj: str
+    kisi: str
 
-    def mesajDondur(self) -> str:
-        return self.mesaj
+class MesajDondurucu:
+    def mesajDondur(self, bilgi: MesajBilgi):
+        return f"{bilgi.kisi} kişisinden mesaj: {bilgi.mesaj}"
 
-class Email:
-    def send(self, bilgi_nesnesi: MesajBilgi):
-        icerik = bilgi_nesnesi.mesajDondur()
-        print(f"Email : {icerik}")
+class Gonderici():
+    def send(self, bilgiNesnesi: MesajBilgi):
+        pass
 
-class Sms:
-    def send(self, bilgi_nesnesi: MesajBilgi):
-        icerik = bilgi_nesnesi.mesajDondur()
-        print(f"SMS : {icerik}")
+class Email(Gonderici):
+    def send(self, bilgiNesnesi: MesajBilgi):
+        dondurucu = MesajDondurucu()
+        icerik = dondurucu.mesajDondur(bilgiNesnesi)
+        print(f"Email Gönderildi: {icerik}")
+
+class Sms(Gonderici):
+    def send(self, bilgiNesnesi: MesajBilgi):
+        dondurucu = MesajDondurucu()
+        icerik = dondurucu.mesajDondur(bilgiNesnesi)
+        print(f"SMS Gönderildi: {icerik}")
 
 
-benimMesajim = MesajBilgi(mesaj="email")
-benimMesajim2= MesajBilgi(mesaj="sms")
+benimMesajim = MesajBilgi(mesaj="Selam", kisi="Mahmut")
+
 mailServisi = Email()
-mailServisi.send(benimMesajim2)
+smsServisi = Sms()
+
 mailServisi.send(benimMesajim)
+smsServisi.send(benimMesajim)
