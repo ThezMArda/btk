@@ -10,7 +10,7 @@ class MesajDondurucu:
         return f"{bilgi.kisi} kişisinden mesaj: {bilgi.mesaj}"
 
 class Gonderici(Protocol):
-    def send(self, bilgiNesnesi: MesajBilgi):
+    def send(self, bilgiNesnesi: MesajBilgi)->None:
         pass
 
 class Email(Gonderici):
