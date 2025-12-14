@@ -1,0 +1,7 @@
+[project]
+name ="kutuphane_tamdegil"
+version ="0.01"
+requires-python =">=3.10"
+
+[project.scripts]
+kutup-app="kutupsis.main:run"
